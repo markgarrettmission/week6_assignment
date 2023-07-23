@@ -1,0 +1,149 @@
+body {
+    font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+header {
+    height: 100px;
+    background-color: #e8e8fd;
+    padding: 1rem;
+}
+
+header h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    flex: 0 1 25%;
+    background-color: #d1cdec;
+}
+
+nav ul li a {
+    display: block;
+    color: #000;
+    background-color: #d1cdec;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 1rem;
+    transition: all .5s ease;
+}
+
+nav ul li a.selected {
+    background-color: #8985a1;
+    color: #ffffff;
+}
+
+nav ul li a:hover {
+    background-color: aliceblue;
+    color: #000000;
+}
+
+#composition_cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+}
+
+.principle {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* 1 column for the card */
+    background-color: rgb(224, 224, 249);
+}
+
+
+#stats li {
+    text-align: center;
+    padding: .5rem;
+    font-size: 1rem;
+}
+
+.principle_tagline {
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+    background-color: #fff;
+    transform: translateY(50%);
+    width: 70%;
+    justify-self: center;
+
+    align-self: end;
+
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    z-index: 2;
+    border-radius: 1em;
+    color: #000;
+    font-size: 1rem;
+    ;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#cfe7fa+0,6393c1+100;Grey+Blue+3D */
+    background: rgb(207, 231, 250);
+    /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(207, 231, 250, 1) 0%, rgba(99, 147, 193, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(207, 231, 250, 1) 0%, rgba(99, 147, 193, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(207, 231, 250, 1) 0%, rgba(99, 147, 193, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cfe7fa', endColorstr='#6393c1', GradientType=0);
+    /* IE6-9 */
+}
+
+.principle_image {
+    aspect-ratio: 1/1;
+    /* keeps the planet image a square */
+    z-index: 1;
+    /* makes sure the image is under the tagline */
+    grid-column: 1/2;
+    /* keeps the planet image from lining up next to the tagline */
+    grid-row: 1/2;
+    /* puts it in the same cell as the tagline */
+}
+
+.principle_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.principle_summary {
+    margin-top: 35px;
+    padding: 1rem;
+
+}
+.principle button {
+    background-color: #4d5087;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 1em;
+    cursor: pointer;
+    transition: all .2s;
+    width: 100%;
+}
+
+.principle button:hover {
+    background-color: #20166a;
+}
+
+footer {
+    height: 50px;
+    background-color: #e8e8fd;
+    padding: 1rem;
+}

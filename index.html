@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principles of Photography</title>
+    <script src="https://kit.fontawesome.com/803b9e77d6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Condensed:wght@300&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url(img/denim.webp);
+        }
+#wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #eeeeee;
+    
+        }
+
+        body * {
+            box-sizing: border-box;
+        }
+
+        header {
+            height: 150px;
+            background-color: #e8e8fd;
+            /* padding: 1rem; */
+            background:url(img/header_image_1.jpg) no-repeat top right;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        header h1 {
+            font-family: 'Roboto Condensed', sans-serif;
+            text-align: left;
+            color: #fff;
+            margin: 0;
+            padding: 0 0 0 1rem;
+            font-size: 3rem;  
+            /* -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  /*-webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black; */
+            text-shadow: 2px 2px #000000;
+/* font-size: clamp(32px, 48px, 64px); */
+/* font-size: clamp(1rem, -0.875rem + 8.333vw, 3.5rem); */
+/* font-size:4vw; */
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            /* justify-content: space-between; */
+        }
+
+        nav ul li {
+
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            flex: 0 1 25%;
+            background-color: #d1cdec;
+            /* border-radius: 3px; */
+
+        }
+
+        nav ul li a {
+            display: block;
+            color: #000;
+            background-color: #d1cdec;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 1rem;
+            transition: all .5s ease;
+        }
+
+        nav ul li a.selected {
+            background-color: #8985a1;
+            color: #ffffff;
+        }
+
+        nav ul li a:hover {
+            background-color: aliceblue;
+            color: #000000;
+        }
+
+        #composition_cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding:1rem;;
+            /* Shorthand for column-gap and row-gap. Changed from old grid-gap so it works with flexbox */
+        }
+
+        .principle {
+            display: grid;
+            grid-template-columns: 1fr;
+            /* 1 colume for the card */
+            /* background-color: rgb(224, 224, 249); */
+            padding:.5rem;
+            border-radius: 5px;
+            /* outline: 1px solid rgba(0, 0, 0, 0.2); */
+            background-color: #ffffff;
+            box-shadow: 0px 0px 1px 2px rgba(0,0,0, 0.04);
+        }
+
+        #stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: .5rem;
+            padding: 0;
+            list-style: none;
+            margin: 35px 0 .5rem 0;
+            /* 2 equal columns */
+            /* 2 equal rows */
+        }
+
+        #stats li {
+            text-align: center;
+            padding: .5rem;
+            font-size: 1rem;
+            /* outline: 1px solid yellow; */
+        }
+
+        .principle_tagline {
+            margin: 0;
+            padding: 1rem;
+            text-align: center;
+            background-color: #fff;
+            transform: translateY(50%);
+            /* moves the object up so it overlaps 2 rows */
+            width: 70%;
+            justify-self: center;
+            /* puts the tagline in the center */
+            /* add this */
+            align-self: end;
+            /* keeps the tagline from stretching */
+            /* add this */
+            grid-row: 1/2;
+            /* putting it in the first row, even though the auto placement algorithm would put it in the 2nd row */
+            grid-column: 1/-1;
+            /* makes it go from the first gridline to the last */
+            z-index: 2;
+            /* makes sure it's above the planet image and the stats */
+            border-radius: 1em;
+            color: #000;
+            font-size: 1rem;
+            ;
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#cfe7fa+0,6393c1+100;Grey+Blue+3D */
+            background: rgb(207, 231, 250);
+            /* Old browsers */
+            background: -moz-linear-gradient(top, rgba(207, 231, 250, 1) 0%, rgba(99, 147, 193, 1) 100%);
+            /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, rgba(207, 231, 250, 1) 0%, rgba(99, 147, 193, 1) 100%);
+            /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(207, 231, 250, 1) 0%, rgba(99, 147, 193, 1) 100%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cfe7fa', endColorstr='#6393c1', GradientType=0);
+            /* IE6-9 */
+        }
+
+        .principle_image {
+            aspect-ratio: 1/1;
+            /* keeps the planet image a square */
+            z-index: 1;
+            /* makes sure the image is under the tagline */
+            grid-column: 1/2;
+            /* keeps the planet image from lining up next to the tagline */
+            grid-row: 1/2;
+            /* puts it in the same cell as the tagline */
+            overflow: hidden;
+            
+        }
+
+        .principle_image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* like background-size for background images, but this works on non-background images */
+            display: block;
+            /* removes a little bit of space that results from inline images */
+            
+            transition: all 1s ease;
+        }
+
+        .principle_image img:hover {
+transform: scale(1.1);
+
+        }
+        .principle_summary {
+            margin-top: 35px;
+            padding: 1rem;
+min-height: 120px;
+
+        }
+        .principle button {
+            background-color: #4d5087;
+            color: #fff;
+            border: none;
+            border-radius: 0;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            padding: 1em;
+            cursor: pointer;
+            transition: all .2s;
+            width: 100%;
+        }
+
+        .principle button:hover {
+            background-color: #20166a;
+        }
+
+        footer {
+            height: 50px;
+            background-color: #e8e8fd;
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+
+    <header>
+        <h1>Principles of Photography V2</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#" class="selected">Composition</a></li>
+            <li><a href="#">Light</a></li>
+            <li><a href="#">Technical</a></li>
+        </ul>
+    </nav>
+    <section id="composition_cards">
+        <div class="principle">
+            <div class="principle_image"><img src="img/balance1-5766.jpg" alt="Saturn"></div>
+            <h5 class="principle_tagline">Rule of Thirds</h5>
+            <div class="principle_summary">
+                Place objects and focal points along lines created by dividing the image into thirds, horizontally and
+                vertically.
+            </div>
+            <div><button>Check it out!</button></div>
+
+        </div>
+        <div class="principle">
+            <div class="principle_image"><img src="img/leading_lines1.jpg" alt="Neptune">
+            </div>
+            <h5 class="principle_tagline">Leading Lines</h5>
+            <div class="principle_summary">
+                Leading lines are vectors or lines that draw the viewer's eye a certain direction or to a certain point
+                in the composition.
+
+            </div>
+            <div> <button>Check it out!</button></div>
+
+        </div>
+        <div class="principle">
+            <div class="principle_image"><img src="img/balance1-5766.jpg" alt=""></div>
+            <h5 class="principle_tagline">Aspect Ratio</h5>
+            <div class="principle_summary">
+                Aspect Ratio is the ratio of the width to the height of the image, or the long side to the short side.
+            </div>
+            <div> <button>Check it out!</button></div>
+
+        </div>
+        <div class="principle">
+            <div class="principle_image"><img src="img/balance1-5766.jpg" alt="Saturn"></div>
+            <h5 class="principle_tagline">Frame within a Frame</h5>
+            <div class="principle_summary">
+                You can use objects in the foreground to 'frame' objects in the background, which can help direct the
+                viewers eye to you subject.
+
+            </div>
+            <div> <button>Check it out!</button></div>
+
+        </div>
+        <div class="principle">
+            <div class="principle_image"><img src="img/balance1-5766.jpg" alt="Neptune">
+            </div>
+            <h5 class="principle_tagline">Balance</h5>
+            <div class="principle_summary">
+                Balance refers to balancing the visual interest within the image. The composition 'feels' right.
+
+            </div>
+            <div> <button>Check it out!</button></div>
+
+        </div>
+        <div class="principle">
+            <div class="principle_image"><img src="img/symmetry1.jpg" alt=""></div>
+            <h5 class="principle_tagline">Symmetry</h5>
+            <div class="principle_summary">
+                Symmetry or a Static Balance is when visual weight is equal across an image, usually across the vertical
+                or horizontal axis. It feels centered.
+            </div>
+            <div> <button>Check it out!</button></div>
+
+        </div>
+    </section>
+    <footer>
+        Copyright &copy; 2023 Mark Garrett
+    </footer>
+</div>
+</body>
+
+</html>
